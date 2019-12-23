@@ -19,3 +19,6 @@ fonts.scss - fonts<br>
 mixins.scss - mixins<br>
 resets.scss - reset base html tags<br>
 vars.scss - variables for @media and fonts
+
+####
+Source with VueJS: https://github.com/vedees/webpack-template
