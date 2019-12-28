@@ -10,6 +10,7 @@ const PATHS = {
     static: 'static/'
 };
 
+
 module.exports = {
     externals: {
         paths: PATHS
@@ -20,7 +21,7 @@ module.exports = {
     output: {
         filename: `${PATHS.static}js/[name].js`,
         path: PATHS.dist,
-        publicPath: '/'
+        publicPath: ''
     },
     module: {
         rules: [
@@ -91,7 +92,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '~': 'src'
+            '~': PATHS.src
         }
     },
     plugins: [
@@ -105,7 +106,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: `${PATHS.src}/${PATHS.static}img`, to: `${PATHS.static}img`},
-            {from: `${PATHS.src}/${PATHS.static}fonts`, to: `${PATHS.static}fonts`},
+            {from: `${PATHS.src}/${PATHS.static}fonts`, to: `${PATHS.dist}static/css`},
             // copy here files like sitemap.xml, robots.txt, etc
             {from: `${PATHS.src}/utils`, to: ''}
         ])
